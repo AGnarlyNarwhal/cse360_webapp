@@ -21,7 +21,7 @@ After running activate you should see '(project_name)' before your prompt in bas
 You can deactivate the virtual environment at any time by typing 'deactivate' into the terminal/cmd. 
 Once you've done this, install the below packages with pip. 
 
-pip install django 
+pip install django<br> 
 pip install pillow
 
 Note: To get pillow to install in virtualenv you need to make sure you have the 

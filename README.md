@@ -27,9 +27,9 @@ pip install pillow
 Note: To get pillow to install in virtualenv you need to make sure you have the 
 python dev packages installed so you have the proper headers. 
 
-In linux: 
-sudo apt-get install python-dev 
-sudo apt-get install python3.4-dev 
+In linux: <br>
+sudo apt-get install python-dev <br>
+sudo apt-get install python3.4-dev <br>
 
 For Windows/Mac: 
 These should already be installed, but you can get them from the package website. 

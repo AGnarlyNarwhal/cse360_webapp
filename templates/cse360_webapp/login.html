@@ -1,0 +1,22 @@
+{% extends "cse360_webapp/base.html" %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  {% endif %}
+  
+  <h1> EventPro! </h1>
+
+  <form action="/accounts/auth/" method="post">{% csrf_token %}
+    <label for="username">Username (email):</label>
+    <input type="text" name="username" value="" id="username">
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="" id="password">
+
+    <input type="submit" value="login" />
+
+  </form>
+
+<h3> Don't have an account? <a href="/accounts/register/"> Register Here! <a/> </h3>
+{% endblock %}

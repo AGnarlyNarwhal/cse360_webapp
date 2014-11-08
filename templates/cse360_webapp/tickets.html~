@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+<head></head>
+<body>
+
+<div style="display:table; width:100%;"> 
+    <div style="display:table-row;">
+        <div style="display:table-cell; width:80%">
+            <h1> {{user.email}}'s Tickets </h1>
+        </div>
+        <div style="display:table-cell; width:20%">
+            <img style="margin-left:50px;" src="{{user.profile.profile_image.url}}" height="100" width="100" alt=""/>
+            </p> {{ user.email }} </p>
+            <p style=""> 
+            <a href="/home/">Home</a>
+                &nbsp;&nbsp;&nbsp;<a href="/accounts/profile">My Profile</a>
+                    &nbsp;&nbsp;&nbsp;<a href="/accounts/logout/">Logout</a>
+            </p>
+        </div></div></div>
+{% for ticket in ticket_list %}
+<h4> {{ticket.event.name}}
+
+<ul>
+<li>Date: {{ticket.event.date}} </li>
+<li>Number of Tickets: {{ticket.num_tickets}} </li>
+</ul>
+{% endfor %}
+</body>
+</html>

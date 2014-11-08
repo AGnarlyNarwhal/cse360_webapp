@@ -1,0 +1,10 @@
+{% extends "app1/events.html" %}
+{% block gallery %}
+<ul>
+{% for event in event_list %} 
+
+<li> <img src="{{ event.picture.path }}", alt="a event thumbnail"/> </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

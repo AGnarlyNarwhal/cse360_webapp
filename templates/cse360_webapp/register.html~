@@ -1,0 +1,21 @@
+{% extends "cse360_webapp/base.html" %}
+
+{% block content %}
+  
+  <h2>Register</h2>
+  <p> Note: Your email can be your username if you so choose. Just enter your email into the 'username' field.
+  {% for field in form %}
+    {{field.error}}
+
+  {% endfor %}
+  
+  <form action="/accounts/register/" method="post">{% csrf_token %}
+  {{form}}
+  
+  
+  
+  <input type="submit" value="Register" />
+    
+  </form>
+  
+{% endblock %}

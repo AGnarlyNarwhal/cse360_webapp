@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> Single Event View </title> 
+
+</head> 
+<body> 
+<div style="width:100%; display:table; margin-top:-20px;">
+<div style="display:table-row; vertical-align: top;">
+<div style="display:table-cell; width:70%; text-align:center;">
+<h1 style="margin-left:35%; margin-top:%;"> {{ event.name }} </h1> 
+<div style="margin-left:35%;">
+<img src="{{ event.picture.url }}" height="300" width ="300" alt="{{event.name}}"/>
+<h4> {{ event.date }} </h4> 
+<h4> {{event.num_tickets }} Tickets Remaining.</h4>
+<p> {{ event.description }} </p>
+
+
+<p>Enter the number of tickets you'd like to purchase, then press 'buy': 
+<INPUT TYPE="NUMBER" NAME="buy_tickets" id="buy_tickets" >
+<button onclick="return checkValid();"> buy </button></p>
+<p> To go back to the main gallery click <a href="/app1/all/"> here. </a></p>
+</div></div>
+<div style="display:table-cell; width:30%;">
+<p style=""> 
+            <a href="/home/">Home</a>
+                &nbsp;&nbsp;&nbsp;<a href="/accounts/profile">My Profile</a>
+                   &nbsp;&nbsp;&nbsp; <a href="/accounts/tickets/">My Tickets</a> 
+                        &nbsp;&nbsp;&nbsp;<a href="/accounts/logout/">Logout</a>
+            </p>
+<img style="margin-left:30%;" src="{{user.profile.profile_image.url}}" height="100" width="100" alt=""/>
+<p style="text-align:center; margin-right:55px;"> {{ user.username }} </p>
+
+</div></div></div><
+
+
+
+<script> 
+function alertme(){alert("This worked");}
+
+function checkValid() {
+//Get variable values 
+var buy_ticks = document.getElementById("buy_tickets").value; 
+//Check if they meet criteria, and redirect or complain
+if ( buy_ticks > 0 && buy_ticks <= {{event.num_tickets}}  ){
+    window.location = "http://localhost:8000/app1/event/buy/{{event.id}}/" + buy_ticks + "/"
+ } else { 
+    alert("Invalid number. Please input a valid number (not 0 or greater than number of tickets available"); 
+}//end else 
+return false; 
+};
+</script> 
+</body>
+</html>
+
+<!-- 
+"http://localhost:8000/app1/event/buy/{{event.id}}/" + buy_ticks.value + "/"
+    <label for="bougt_tickets">Enter the number of tickets to buy/reserve:</label>
+    <input type="number" name="bought_ticks" value="" id="bought_ticks">
+    <input type="hidden" name="event_id" value="{{event.id}}" id="event_id">
+
+    <form action="/app1/event/buy/{{event.id}}/" method="post">
+    {% csrf_token %}
+    <label for="bought_tickets">Enter the number of tickets to buy/reserve:</label>
+    <input type="number" name="bought_ticks" value="" id="bought_ticks">
+    <input type="submit" value="Buy">
+                                                                        -->

@@ -1,0 +1,79 @@
+Django Project Notes: 
+
+Details on deploying with apache: 
+http://www.tonido.com/blog/index.php/2013/11/25/working-with-virtualenv-on-django-projects/#.VE8HbvnF8hM
+
+Managing pictures and static files in Django: 
+https://docs.djangoproject.com/en/1.7/topics/files/
+
+Fabric, a tool for using SSH for server commands: 
+http://www.fabfile.org/
+
+-Need to learn how to write regex's for the url directs/views
+
+-If we create a directory called 'templates' in our application directory 
+Django will know that's where our templates are. We can change this by editing settings
+and telling it where our templates are. 
+
+To implement an application into a template we: 
+- Create a basic html template with our standard html 
+- use Django's templating language to input our template 
+
+We can use our tags and filters for logical operations and formatting etc. 
+It sounds like we use the tags and filters to manipulate our classes. Yes.
+
+So for our application, in our view we can create a for loop that will display all of our events, in real time on the webpage. This is good. 
+
+example: 
+<html> 
+<head>
+<title> This is our webpage </title>
+</head> 
+<body>
+<h1> Welcome to the site </h1>
+//This is our django app 
+{% block content %}
+{% endblock %} 
+</body>
+</html>
+
+^Above is our first template, the actual page 
+Then we create a second template with is the actual template for the app 
+This is the template for our app: 
+
+{% extends "app/base.html" %}
+{% block content %}
+{{hello}} //prints out some variable hello
+{% endblock %} 
+
+So the stuff in the child template shows up in the parent template 
+
+So models in Django are for: 
+- Creating neccessary tables 
+- Generating the SQL to Create/Read/Update/Delete data
+- ORM (Object Relational Mapper) 
+
+Models are: 
+A model == Database table 
+A model instance == a database table row 
+
+We'll likely be using ModelForms to allow users to make events. 
+Need to read into sessions as well, for user sessions. 
+IPython for our interacive console
+
+djang-debug-toolbar for debugging insite. 
+Will tell me: 
+what view is running. 
+what templates it used. 
+what variables are available. 
+what sql queries were run. 
+logging,messages. 
+etc. 
+
+So I need to install that. 
+
+
+
+
+
+

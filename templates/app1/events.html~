@@ -1,0 +1,43 @@
+<html> 
+<head>
+<title> Web App  </title>
+<style>  
+.top-left{float:left; width:50%; display:table-cell;}
+.top-right{float:right; width:50%;}
+.block 
+{ display: inline-block; vertical-align: top; height:300px; width:200px; }
+.wrapper { width: 98%; padding-left:3%; padding-right:1%; }
+</style>
+</head> 
+<body>
+<div style="width:100%; display:table; margin-top:-20px;">
+<!--div style="display:table-row;" -->
+<div style="display:table-cell; width:70%;">
+<h1 style="margin-left:35%; margin-top:%;"> Welcome To EventPro </h1>
+</div>
+<div style="display:table-cell; width:30%;">
+<p style=""> 
+            <a href="/home/">Home</a>
+                &nbsp;&nbsp;&nbsp;<a href="/accounts/profile">My Profile</a>
+                   &nbsp;&nbsp;&nbsp; <a href="/accounts/tickets/">My Tickets</a> 
+                        &nbsp;&nbsp;&nbsp;<a href="/accounts/logout/">Logout</a>
+            </p>
+<img style="margin-left:30%;" src="{{user.profile.profile_image.url}}" height="100" width="100" alt=""/>
+<p style="text-align:center; margin-right:55px;"> {{ user.username }} </p>
+
+</div></div></div>
+<p> {{ today}} </p>
+{% block gallery %}
+<div class="wrapper"> 
+{% for event in event_list %}
+<div class="block">
+<h5> {{ event.name }} </h5>
+<a href="http://localhost:8000/app1/get/{{event.id }}"><img src="{{event.picture.url}}" height="150" width="150 alt="{{event.name}}"/></a>
+<h5>{{ event.date }} </h5>
+<h5>{{ event.num_tickets }} Tickets Available </h5> 
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

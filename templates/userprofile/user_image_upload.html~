@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+</head> 
+<body> 
+<div style="width:100%; display:table; margin-top:-20px;">
+<div style="display:table-row; vertical-align: top;">
+<div style="display:table-cell; width:70%;">
+<h1 style="margin-left:35%; margin-top:%;"> User Image Upload </h1>
+
+
+<form method="post" action="/accounts/profile/" enctype="multipart/form-data"> 
+{% csrf_token %}
+{{ form }} 
+<input type="submit" value="submit">
+</div>
+<div style="display:table-cell; width:30%;">
+<p style=""> 
+            <a href="/home/">Home</a>
+                &nbsp;&nbsp;&nbsp;<a href="/accounts/profile">My Profile</a>
+                   &nbsp;&nbsp;&nbsp; <a href="/accounts/tickets/">My Tickets</a> 
+                        &nbsp;&nbsp;&nbsp;<a href="/accounts/logout/">Logout</a>
+            </p>
+<img style="margin-left:30%;" src="{{user.profile.profile_image.url}}" height="100" width="100" alt=""/>
+<p style="text-align:center; margin-right:55px;"> {{ user.username }} </p>
+
+</div></div></div>
+</form>  
+</body> 
+</html> 
+

@@ -1,0 +1,20 @@
+URL/view notes:
+
+So to create a new view, first we create a url in: 
+project/app/url.py (create it if it doesn't exist)
+
+Then we go to project/app/views.py and define it in a function: 
+def home(request): 
+	return HttpResponse("Hello World!")
+
+^This just returns hello world/no html 
+
+So if we want to create a template for our view we can create a directory in project/app1/templates, and then create some html templates. 
+
+Once we've created our url.py file in the app directory, and then defined our url, we need to add it to the project's main url.py file. 
+
+urlpatterns = patterns('',
+    url(r'^app/', include('app.urls')), #< this is what we've included 
+    url(r'^admin/', include(admin.site.urls)),
+)
+

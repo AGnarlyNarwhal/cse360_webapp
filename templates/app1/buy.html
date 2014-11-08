@@ -1,0 +1,13 @@
+{% extends "app1/event.html" %} 
+{%block content %}
+<form action="/app1/event/buy/{{event.id}}" method="post">
+    {% csrf_token %}
+    <label for="bought_tickets">Enter the number of tickets to buy/reserve:</label>
+    <input type="number" name="bought_ticks" value="" id="bought_ticks">
+    <input type="submit" value="Buy">
+</form>
+{% endblock %}
+
+
+
+

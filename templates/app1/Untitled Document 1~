@@ -1,0 +1,12 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+</head> 
+<body> 
+<h1> User Picture Upload </h1> 
+<form method="post" action=""> 
+{{ form }} 
+</form>  
+</body> 
+</html> 
+

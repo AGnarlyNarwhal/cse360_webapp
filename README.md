@@ -9,17 +9,20 @@ Otherwise, go to pip's website, http://pip.readthedocs.org/en/latest/installing.
 The procedure is the same for Windows and Mac. 
 
 Next, you'll want to install virtualenv, django, and pillow (for handling pictures). 
-In command prompt, or mac's terminal, run: 
+In command prompt, or mac's terminal, run: <br>
 pip install virtualenv
 
 Then go to (or create) a directory where you'd like to install the project. 
 run ' virtualenv "project_name" ' in that directory to create a virtual environment so you don't have to mess 
 with your current system configuration, as well as to give you a sterile starting environment. 
 
-Then go to 'project_name'/scripts and run 'activate' to start the virtual environment so you can install the neccessary packages into it. 
+Then go to 'project_name'/bin/scripts and run 'activate' to start the virtual environment so you can install the neccessary packages into it. If you have issues running virtualenv, you can check their documentation at: <br> 
+
+http://virtualenv.readthedocs.org/en/latest/virtualenv.html#installation
+
 After running activate you should see '(project_name)' before your prompt in bash/cmd/terminal. 
 You can deactivate the virtual environment at any time by typing 'deactivate' into the terminal/cmd. 
-Once you've done this, install the below packages with pip. 
+Once you've installed and activated virtualenv, install the below packages with pip. 
 
 pip install django<br> 
 pip install pillow
@@ -37,7 +40,7 @@ These should already be installed, but you can get them from the package website
 For problems with installation of these packages, or enabling pip, please check the pip or respective software's documentation. 
 Once these have installed, you should be good to go. Just copy the projects files/directories into your 'project_name' directory. 
 Then cd your way into the directory containing manage.py. 
-Then run the django server with: 
+Run the django server with: 
 
 python manage.py runserver 
 

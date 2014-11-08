@@ -21,11 +21,22 @@ After running activate you should see '(project_name)' before your prompt in bas
 You can deactivate the virtual environment at any time by typing 'deactivate' into the terminal/cmd. 
 Once you've done this, install the below packages with pip. 
 
-pip install django 
-pip install pillow 
+pip install django<br> 
+pip install pillow
+
+Note: To get pillow to install in virtualenv you need to make sure you have the 
+python dev packages installed so you have the proper headers. 
+
+In linux: <br>
+sudo apt-get install python-dev <br>
+sudo apt-get install python3.4-dev <br>
+
+For Windows/Mac: 
+These should already be installed, but you can get them from the package website. 
 
 For problems with installation of these packages, or enabling pip, please check the pip or respective software's documentation. 
 Once these have installed, you should be good to go. Just copy the projects files/directories into your 'project_name' directory. 
+Then cd your way into the directory containing manage.py. 
 Then run the django server with: 
 
 python manage.py runserver 

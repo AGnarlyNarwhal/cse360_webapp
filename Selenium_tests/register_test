@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>register_test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">register_test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/accounts/login/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Register Here!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_username</td>
+	<td>user_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password1</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password2</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>user_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Register Here!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_username</td>
+	<td>user_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password1</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password2</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_username</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password1</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password2</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_username</td>
+	<td>user_test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password1</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password2</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>user_test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_profile_image</td>
+	<td>/home/nick/Pictures/file000325161223.jpg</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Home</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>user_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

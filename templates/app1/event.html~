@@ -53,15 +53,3 @@ return false;
 </body>
 </html>
 
-<!-- 
-"http://localhost:8000/app1/event/buy/{{event.id}}/" + buy_ticks.value + "/"
-    <label for="bougt_tickets">Enter the number of tickets to buy/reserve:</label>
-    <input type="number" name="bought_ticks" value="" id="bought_ticks">
-    <input type="hidden" name="event_id" value="{{event.id}}" id="event_id">
-
-    <form action="/app1/event/buy/{{event.id}}/" method="post">
-    {% csrf_token %}
-    <label for="bought_tickets">Enter the number of tickets to buy/reserve:</label>
-    <input type="number" name="bought_ticks" value="" id="bought_ticks">
-    <input type="submit" value="Buy">
-                                                                        -->

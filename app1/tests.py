@@ -60,7 +60,18 @@ class TicketTest(TestCase):
         
         #Should be 302, redirected if not logged in 
         #self.assertEqual(resp.status_code, 302)    
-        self.assertEqual(resp.status_code, 200) 
-       
+        self.assertEqual(resp.status_code, 200)
         
-                    
+    def test_buytickets_view(self): 
+        t = self.create_ticket()
+        event = Event.objects.create(name="test event", date=timezone.now(),
+            pub_date=timezone.now(), num_tickets='5', description="test description")
+        self.client.login(username='test_user', password='password')
+        #arguments for url are event.id and num_tickets
+        url = reverse('app1.views.buytickets', args=[event.id,1])
+        resp = self.client.get(url)
+        
+        #Should redirect home automatically 
+        self.assertEqual(resp.status_code, 302) 
+        #self.assertEqual(reverse('app1.views.buytickets', args=[event.id,1]), reverse('app1.views.events')
+

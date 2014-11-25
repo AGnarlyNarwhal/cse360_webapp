@@ -31,7 +31,7 @@
 {% for event in event_list %}
 <div class="block">
 <h5> {{ event.name }} </h5>
-<a href="http://localhost:8000/app1/get/{{event.id }}"><img src="{{event.picture.url}}" height="150" width="150 alt="{{event.name}}"/></a>
+<a href="http://localhost/app1/get/{{event.id }}"><img src="{{event.picture.url}}" height="150" width="150 alt="{{event.name}}"/></a>
 <h5>{{ event.date }} </h5>
 <h5>{{ event.num_tickets }} Tickets Available </h5> 
 </div>

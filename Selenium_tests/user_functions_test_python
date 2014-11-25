@@ -1,0 +1,94 @@
+# -*- coding: utf-8 -*-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
+import unittest, time, re
+
+class UserFunctionsTest(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        self.driver.implicitly_wait(30)
+        self.base_url = "http://localhost/"
+        self.verificationErrors = []
+        self.accept_next_alert = True
+    
+    def test_user_functions(self):
+        driver = self.driver
+        driver.get(self.base_url + "/accounts/login/")
+        driver.find_element_by_id("username").clear()
+        driver.find_element_by_id("username").send_keys("test@test.com")
+        driver.find_element_by_id("password").clear()
+        driver.find_element_by_id("password").send_keys("password")
+        driver.find_element_by_css_selector("input[type=\"submit\"]").click()
+        driver.find_element_by_css_selector("a > img").click()
+        driver.find_element_by_id("buy_tickets").clear()
+        driver.find_element_by_id("buy_tickets").send_keys("0")
+        driver.find_element_by_css_selector("button").click()
+        self.assertEqual("Invalid number. Please input a valid number (not 0 or greater than number of tickets available", self.close_alert_and_get_its_text())
+        driver.find_element_by_id("buy_tickets").clear()
+        driver.find_element_by_id("buy_tickets").send_keys("-1")
+        driver.find_element_by_css_selector("button").click()
+        self.assertEqual("Invalid number. Please input a valid number (not 0 or greater than number of tickets available", self.close_alert_and_get_its_text())
+        driver.find_element_by_id("buy_tickets").clear()
+        driver.find_element_by_id("buy_tickets").send_keys("")
+        driver.find_element_by_link_text("here.").click()
+        driver.find_element_by_xpath("//img[contains(@src,'http://localhost/media/photos/event_thumbnails/file0001316404158.jpg')]").click()
+        driver.find_element_by_id("buy_tickets").clear()
+        driver.find_element_by_id("buy_tickets").send_keys("2")
+        driver.find_element_by_css_selector("button").click()
+        driver.find_element_by_link_text("My Tickets").click()
+        driver.find_element_by_link_text("My Profile").click()
+        driver.find_element_by_id("id_profile_image").clear()
+        driver.find_element_by_id("id_profile_image").send_keys("/home/nick/Pictures/firework.jpg")
+        driver.find_element_by_css_selector("input[type=\"submit\"]").click()
+        driver.find_element_by_link_text("My Profile").click()
+        driver.find_element_by_link_text("Home").click()
+        driver.find_element_by_xpath("//img[contains(@src,'http://localhost/media/photos/event_thumbnails/file000555007525_RGeZlWI.jpg')]").click()
+        driver.find_element_by_id("buy_tickets").clear()
+        driver.find_element_by_id("buy_tickets").send_keys("5")
+        driver.find_element_by_css_selector("button").click()
+        driver.find_element_by_link_text("My Profile").click()
+        driver.find_element_by_id("id_profile_image").clear()
+        driver.find_element_by_id("id_profile_image").send_keys("/home/nick/Pictures/CreepyHallway.jpg")
+        driver.find_element_by_css_selector("input[type=\"submit\"]").click()
+        driver.find_element_by_link_text("Logout").click()
+        driver.find_element_by_link_text("here").click()
+        driver.find_element_by_id("username").clear()
+        driver.find_element_by_id("username").send_keys("test@test.com")
+        driver.find_element_by_id("password").clear()
+        driver.find_element_by_id("password").send_keys("password")
+        driver.find_element_by_css_selector("input[type=\"submit\"]").click()
+        driver.find_element_by_link_text("My Tickets").click()
+        driver.find_element_by_link_text("Logout").click()
+        driver.find_element_by_link_text("here").click()
+    
+    def is_element_present(self, how, what):
+        try: self.driver.find_element(by=how, value=what)
+        except NoSuchElementException, e: return False
+        return True
+    
+    def is_alert_present(self):
+        try: self.driver.switch_to_alert()
+        except NoAlertPresentException, e: return False
+        return True
+    
+    def close_alert_and_get_its_text(self):
+        try:
+            alert = self.driver.switch_to_alert()
+            alert_text = alert.text
+            if self.accept_next_alert:
+                alert.accept()
+            else:
+                alert.dismiss()
+            return alert_text
+        finally: self.accept_next_alert = True
+    
+    def tearDown(self):
+        self.driver.quit()
+        self.assertEqual([], self.verificationErrors)
+
+if __name__ == "__main__":
+    unittest.main()

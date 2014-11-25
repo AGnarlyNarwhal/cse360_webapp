@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app1',
     'userprofile',
+    'django_nose',
+    'lettuce.django',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +70,15 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=app1,cse360_webapp,userprofile',
+]
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'US/Arizona'
@@ -94,7 +105,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = '/home/nick/djangoapp/cse360_webapp/media/'
 
-MEDIA_URL = 'http://localhost:8000/media/'
+MEDIA_URL = 'http://localhost/media/'
 
 TEMPLATE_DIRS = ( os.path.join(SETTINGS_PATH, 'templates'), )
 

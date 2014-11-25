@@ -178,7 +178,7 @@ ab -n 100000 -c 50 http://localhost/home/ #or whatever other project url you wan
 The -n denotes the number of requests (users), the -c is for the number of concurrent requests. 
 After running Apache Benchmark will print out a nifty report for you on the server's performance and stats. 
 
-We chose to run it on http://localhost/accounts/login.html/ since that authentication and form valitdation was the most server intensive view to load. Our results are in the files above, called 'loadtest_test0.txt'. We even make a dope little graph, it's easy to spot since it's the only .png file in the project. 
+We chose to run it on http://localhost/accounts/login.html/ since that authentication and form valitdation was the most server intensive view to load. Our results are in the files above, called 'loadtest_test0.txt'. We even made a dope little graph, it's easy to spot since it's the only .png file in the project. 
 
 Thanks for looking at our project, we hope you enjoyed our work as much as we did. 
 

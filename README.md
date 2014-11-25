@@ -62,7 +62,7 @@ sqlite3 (comes with django) <br>
 firefox <br>
 selenium<br>
 
-You can install these programs via these commands in bash: 
+You can install these programs via these commands in bash: <br>
 pip install gunicorn <br>
 sudo apt-get install nginx <br>
 pip install django_nose<br>

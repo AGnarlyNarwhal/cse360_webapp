@@ -63,11 +63,13 @@ firefox <br>
 selenium<br>
 
 You can install these programs via these commands in bash: <br>
-pip install gunicorn <br>
-sudo apt-get install nginx <br>
-pip install django_nose<br>
-pip install coverage<br>
-sudo apt-get install apache2-utils (for ab)<br>
+```
+pip install gunicorn 
+sudo apt-get install nginx 
+pip install django_nose
+pip install coverage
+sudo apt-get install apache2-utils (for ab)
+```
 sqlite3 doesn't need installation if you've already installed django <br>
 
 These programs are a straight forward download from the internet:<br>

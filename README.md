@@ -1,3 +1,5 @@
+<h1> README </h1>
+
 To run this project, first you need to install python. 
 If you're using a linux distrobution, python should already be installed. 
 You can check this by running 'python' in bash. 
@@ -50,7 +52,7 @@ The homepage of the project is 'localhost:8000/home/'.
 
 <h1> Servers and Proxy Setup, Functional and Load Testing </h1> 
 Once you have the project setup and running by following the instructions in the previous section, you are ready to put it into production and test it. 
-The menagerie of programs you'll need for this are: 
+The menagerie of programs you'll need for this are: <br>
 gunicorn <br>
 nginx <br>
 django_nose<br>
@@ -81,7 +83,7 @@ To run the functional tests, you can run the django debugging server and open 'S
 
 Before you run the tests though, you might want to set up nginx and gunicorn so you can run in a production environment. To do that, you'll need to change a few of nginx's settings. 
 
-<a href="http://www.apreche.net/complete-single-server-django-stack-tutorial/">This</a> link will tell you the specifics of where and now to change the nginx default settings to work for any django configuration you want it to. For this project however, we'll just give you the files that work. 
+<a href="http://www.apreche.net/complete-single-server-django-stack-tutorial/">This</a> link will tell you the specifics of where and now to change the nginx default settings to work for any django configuration you want it to. For this project however, we'll just give you the code that works. 
 
 First, you'll need to run these commands to set nginx up for our specific configuration.
 ```
@@ -96,7 +98,7 @@ $ sudo ln -s ../sites-available/cse360_webapp
 # edit the nginx configuration file
 $ vim /etc/nginx/sites-available/cse360_webapp
 ```
-In that last part, you'll put the text below into your configuraton file. We can't just give you the file since you won't have write permissions in that directory, and you'll have to create the file yourself to edit it, which mean's you'll be copying and pasting anyway. The only thing you need to change is the directory to the project before the 'root' variable. 
+In that last part, you'll put the text below into your configuraton file. We can't just give you the file since you won't have write permissions in that directory, and you'll have to create the file yourself to edit it, which mean's you'll be copying and pasting anyway. The only thing you need to change is the directory to the project before the 'root' variable, which will be unique to your system. 
 
 ```
 # define an upstream server named gunicorn on localhost port 8000
@@ -153,7 +155,7 @@ server {
 ``` 
 
 <h2> And then that's it! </h2> 
-The project is set up in production. Just make sure that you change Debug=True to false in django's settings. 
+The project is set up in production. Just make sure that you change Debug=True to False in django's settings. 
 You can run and build tests to your hearts content. And should you feel like adding more servers or databases, it's childs play to just add a few lines to the nginx configuration file. 
 
 To start nginx and gunicorn, make sure your in the same directory as django's manage.py file, then run: 

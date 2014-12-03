@@ -105,7 +105,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = '/home/nick/djangoapp/cse360_webapp/media/'
 
-MEDIA_URL = 'http://localhost/media/'
+MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = ( os.path.join(SETTINGS_PATH, 'templates'), )
 

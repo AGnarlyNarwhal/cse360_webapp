@@ -43,7 +43,7 @@ function checkValid() {
 var buy_ticks = document.getElementById("buy_tickets").value; 
 //Check if they meet criteria, and redirect or complain
 if ( buy_ticks > 0 && buy_ticks <= {{event.num_tickets}}  ){
-    window.location = "http://localhost/app1/event/buy/{{event.id}}/" + buy_ticks + "/"
+    window.location = "/app1/event/buy/{{event.id}}/" + buy_ticks + "/"
  } else { 
     alert("Invalid number. Please input a valid number (not 0 or greater than number of tickets available"); 
 }//end else 

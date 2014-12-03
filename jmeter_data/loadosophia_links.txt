@@ -1,0 +1,9 @@
+no_proxy: 
+http://loadosophia.org/examples/188930/
+
+full_proxy: 
+http://loadosophia.org/examples/188931/
+
+full_proxy_to_failure: 
+http://loadosophia.org/examples/188932/
+

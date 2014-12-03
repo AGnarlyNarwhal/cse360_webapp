@@ -3,3 +3,7 @@ Process for repository upload:
 git status #See what's changed in the repository 
 git add * #to add new files/ modified files 
 git commit -m 'msg' #stages all files to be pushed to repository
+git push origin master #Writes all files/changes to the repository 
+git rm *.*~ to remove all backup files (files with the tilde) 
+
+#need to edit .gitignore to ignore ~files. 
